@@ -1,0 +1,33 @@
+{
+    "name": "dmb/wp-dictator",
+    "description": "The Dictator controls the state of WordPress",
+    "type": "wp-cli-package",
+    "homepage": "https://github.com/svorwerk-dentsu/wp-dictator",
+    "license": "MIT",
+    "prefer-stable": true,
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.6"
+    },
+    "autoload": {
+        "files": [ "dictator.php" ]
+    },
+    "require-dev": {
+        "wp-cli/wp-cli-bundle": "^2.4",
+        "wp-cli/wp-cli-tests": "^3.0"
+    },
+    "scripts": {
+        "behat": "run-behat-tests",
+        "behat-rerun": "rerun-behat-tests",
+        "lint": "run-linter-tests",
+        "phpcs": "run-phpcs-tests",
+        "phpunit": "run-php-unit-tests",
+        "prepare-tests": "install-package-tests",
+        "test": [
+            "@lint",
+            "@phpcs",
+            "@phpunit",
+            "@behat"
+        ]
+    }
+}
